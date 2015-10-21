@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .nav li{
     display: inline;
 }
@@ -16,7 +17,7 @@
 }
 
 .nav a:hover{
-    color: FF6600;
+    color: #FF6600;
 }
 
 .nav ul{
@@ -45,4 +46,15 @@
     position: relative;
     top: 100px;
     text-align: center;
+}
+
+.About-Karma h3{
+    font-weight: Bold;
+}
+
+.About-Karma .container{
+    font-family: 'Shift', sans-serif;
+    text-align: center;
+    background-color: #ffcc99;
+    background-size: cover;
 }
