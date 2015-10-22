@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'pages/signup'
   get 'pages/feed'
-  get '/createPost' => "pages#createPost"
+  get 'pages/createPost' => "pages#createPost"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
