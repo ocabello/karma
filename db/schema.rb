@@ -23,19 +23,4 @@ ActiveRecord::Schema.define(version: 20151026011111) do
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
-  create_table "user_infos", force: :cascade do |t|
-    t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "firstName"
-    t.string   "lastName"
-    t.string   "email"
-    t.string   "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
 end

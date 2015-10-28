@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   resources :posts
-  resources :users
   root 'pages#home'
   get 'users/new' => "users#new"
   get 'posts/new' => "posts#new"
