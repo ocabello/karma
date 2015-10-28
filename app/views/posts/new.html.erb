@@ -1,0 +1,25 @@
+<h1>Create New Post!</h1
+
+<div class="create">
+  <div class="container">
+      
+<%= form_for(@post) do |f| %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :postedBy %><br>
+    <%= f.text_field :postedBy %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+</div></div>
