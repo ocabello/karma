@@ -1,0 +1,20 @@
+<h1>Show User</h1>
+<%= @user.name %>, <%= @user.email %>, <%= @user.points %>
+
+<div class="updatePoints">
+  <div class="container">
+      
+<%= form_for(@user) do |f| %>
+
+  <div class="field">
+    <%= f.label :points %><br>
+    <%= f.text_field :points %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+</div>
+</div>
