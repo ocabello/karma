@@ -1,5 +1,17 @@
 <h1>Show User</h1>
-<%= @user.name %>, <%= @user.email %>, <%= @user.points %>
+
+<p>
+    <strong>Name:</strong>
+    <%= @user.name %>
+</p>
+<p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+</p>
+<p>
+    <strong>Karma Points:</strong>
+    <%= @user.points %>
+</p>
 
 <div class="updatePoints">
   <div class="container">
@@ -12,9 +24,11 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Send Points"%>
   </div>
 <% end %>
 
 </div>
 </div>
+
+<%= link_to 'Back', users_path %>
