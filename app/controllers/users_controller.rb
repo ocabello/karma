@@ -8,6 +8,16 @@ class UsersController < ApplicationController
   end
 
   def new
+    @user = User.new
+  end
+  
+  def create
+    @user = User.new(user_params_1)
+    if @user.save
+      redirect_to '/users'
+    else
+      render 'new'
+    end
   end
   
   def update
@@ -24,6 +34,10 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
         params.require(:user).permit(:points)
+    end
+    
+    def user_params_1
+      params.require(:user).permit(:name, :email, :points)
     end
         
   
