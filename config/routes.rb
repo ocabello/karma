@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'users/show'
 
   get 'users/new'
+  
+  get 'posts/show'
 
   root 'pages#home'
   get 'users/new' => "users#new"
