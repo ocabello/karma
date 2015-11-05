@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   
   get 'posts/show'
 
+  get '/users/:id' => 'users#show'
   root 'pages#home'
   get 'users/new' => "users#new"
   get 'posts/new' => "posts#new"

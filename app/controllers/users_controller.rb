@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by_myid(params[:id])
+    @posts = Post.where("usermyid"=> @user.myid)
   end
 
   def new
@@ -37,7 +38,7 @@ class UsersController < ApplicationController
     end
     
     def user_params_1
-      params.require(:user).permit(:name, :email, :points)
+      params.require(:user).permit(:name, :email, :points, :myid)
     end
         
   

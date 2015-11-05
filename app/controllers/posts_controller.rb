@@ -4,10 +4,6 @@ class PostsController < ApplicationController
         @posts = Post.all
     end
     
-    def show
-        @post = Post.find(params[:id])
-    end
-    
     def new 
         @post = Post.new
     end
@@ -24,7 +20,7 @@ class PostsController < ApplicationController
     private
         # Never trust parameters from the scary internet, only allow the white list through.
         def post_params
-            params.require(:post).permit(:title, :description, :postedBy)
+            params.require(:post).permit(:title, :description, :postedBy, :usermyid)
         end
 
 end
