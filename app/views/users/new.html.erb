@@ -4,16 +4,19 @@
   <div class="container">
       
 <%= form_for(@user) do |f| %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
+  <%= render 'shared/error_messages' %>
   
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+  
+  <%= f.label :email %>
+  <%= f.email_field :email, class: 'form-control' %>
+  
+  <%= f.label :password %>
+  <%= f.password_field :password, class: 'form-control' %>
+
+  <%= f.label :password_confirmation, "Confirmation" %>
+  <%= f.password_field :password_confirmation, class: 'form-control' %>
   
   <div class="field">
     <%= f.label :points %><br>
@@ -25,9 +28,7 @@
     <%= f.text_field :myid %>
   </div>
   
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.submit "Create my account", class: "btn btn-primary" %>
 <% end %>
 
 </div></div>
