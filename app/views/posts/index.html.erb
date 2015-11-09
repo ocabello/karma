@@ -6,10 +6,9 @@
       <th>Title</th>
       <th>Description</th>
       <th>Posted By</th>
-      <th>Test Id</th>
       <th>Created At</th>
       
-      <th colspan="4"></th>
+      <th colspan="5"></th>
     </tr>
   </thead>
 
@@ -20,7 +19,7 @@
         <td><%= post.description %></td>
         <td><%= post.postedBy %></td>
         <td><%= post.created_at %></td>
-        <td><%= link_to 'Show', post %></td>
+        <td><a href="<%= users_path %>/<%= post.id %>">Show</a></td>
       </tr>
     <% end %>
   </tbody>

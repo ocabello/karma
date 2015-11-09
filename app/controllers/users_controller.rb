@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = Post.where("id"=> @user.id)
   end
 
   def new
@@ -14,6 +15,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params_1)
     if @user.save
+      log_in @user
       redirect_to '/users'
     else
       render 'new'
@@ -22,22 +24,22 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
-    respond_to do |format|
       if @user.update_attributes(user_params)
-        format.html { redirect_to(@user, :notice => "#{@user.name}'s points was updated.") }
-        format.xml  { head :ok }
+        redirect_to @user
+      else
+        render 'show'  
       end
-    end
+    
   end
   
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-        params.require(:user).permit(:points)
+      params.require(:user).permit(:points)
     end
     
     def user_params_1
-      params.require(:user).permit(:name, :email, :points)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :points)
     end
         
   

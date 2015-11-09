@@ -5,11 +5,18 @@ Rails.application.routes.draw do
   get 'users/show'
 
   get 'users/new'
+  
+  get 'posts/show'
+  
 
+  get '/users/:id' => 'users#show'
   root 'pages#home'
-  get 'users/new' => "users#new"
+  get 'signup' => "users#new"
   get 'posts/new' => "posts#new"
   get '/posts' => "posts#index"
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
 
   resources :users
   resources :posts

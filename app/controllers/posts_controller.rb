@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
     
     def index 
-        @posts = Post.all 
+        @posts = Post.all
     end
     
     def new 
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     private
         # Never trust parameters from the scary internet, only allow the white list through.
         def post_params
-            params.require(:post).permit(:title, :description, :postedBy)
+            params.require(:post).permit(:title, :description, :postedBy, :usermyid)
         end
 
 end

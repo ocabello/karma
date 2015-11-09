@@ -2,38 +2,44 @@
 <html>
 <head>
   <title>Karma</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all',
+                                           'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
   <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
-  <link rel='stylesheet' href="ttps://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
 </head>
 <body>
-
-    <div class="nav">
-      <div class="container">
-        <ul class="nav nav-pills">
-          <li><a href="/">Home</a></li>
+  <%= render 'layouts/header' %>
+  <div class="container">
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+  </div>
+  
+  
+        <!--<ul class="nav nav-pills">-->
+        <!--  <li><a href="/">Home</a></li>
           <li><a href="/posts">Browse Posts</a></li>
           <li><a href="">View My Posts</a></li>
           <li><a href="/users">View All Users</a></li>
           <li><a href="users/new">Sign Up</a></li>
-        </ul>                    
-      </div>
-    </div>
-    
-    
-<%= yield %>
-
-  <footer class="footer">    
-	  <div class="container">
-
-	    	<p class="text-muted">&copy; 2015 Karma Inc.</p>
+          
+        <!--</ul>                    -->
+        
       
+    
+    
 
-	  </div>
-	</footer>
+
+ <!-- <footer class="footer">    -->
+	<!--  <div class="container">-->
+
+	<!--    	<p class="text-muted">&copy; 2015 Karma Inc.</p>-->
+
+	<!--  </div>-->
+	<!--</footer>-->
 	
 </body>
 </html>

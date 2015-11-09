@@ -1,10 +1,10 @@
-<h1>Create New Post!</h1
+
 
 <div class="create">
   <div class="container">
       
 <%= form_for(@post) do |f| %>
-
+  <h1>Create New Post!</h1>
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -16,6 +16,11 @@
   <div class="field">
     <%= f.label :postedBy %><br>
     <%= f.text_field :postedBy %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :usermyid %><br>
+    <%= f.text_field :usermyid %>
   </div>
   <div class="actions">
     <%= f.submit %>
