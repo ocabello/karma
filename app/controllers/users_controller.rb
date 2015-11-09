@@ -4,8 +4,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by_myid(params[:id])
-    @posts = Post.where("usermyid"=> @user.myid)
+    @user = User.find(params[:id])
+    @posts = Post.where("id"=> @user.id)
   end
 
   def new
@@ -24,12 +24,12 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
-    respond_to do |format|
       if @user.update_attributes(user_params)
-        format.html { redirect_to(@user, :notice => "#{@user.name}'s points was updated.") }
-        format.xml  { head :ok }
+        redirect_to @user
+      else
+        render 'show'  
       end
-    end
+    
   end
   
   private
