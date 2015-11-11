@@ -4,15 +4,8 @@
   <div class="container">
       
 <%= form_for(@user) do |f| %>
-<<<<<<< HEAD
   <%= render 'shared/error_messages' %>
-=======
   <h1>Sign Up</h1>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
->>>>>>> af8d1b2ebda59a9a23fa4cf8d1aacff1d121f2e1
   
   <%= f.label :name %>
   <%= f.text_field :name, class: 'form-control' %>
@@ -30,12 +23,7 @@
     <%= f.label :points %><br>
     <%= f.text_field :points %>
   </div>
-  
-  <div class="field">
-    <%= f.label :myid %><br>
-    <%= f.text_field :myid %>
-  </div>
-  
+
   <%= f.submit "Create my account", class: "btn btn-primary" %>
 <% end %>
 
