@@ -1,6 +1,5 @@
 <h1>Show Post</h1>
 
-<<<<<<< HEAD
 <p>
     <strong>Title:</strong>
     <%= @post.title %>
@@ -13,25 +12,8 @@
     <strong>Posted By:</strong>
     <%= @post.postedBy %>
 </p>
-<p>
-    <strong>Test Id:</strong>
-    <%= post.user[:testId] %>
-</p>
 
 </div>
 </div>
 
-<%= link_to 'Back', users_path %>
-=======
-
-    <li id="post-<%= post.id %>">
-  <%= link_to gravatar_for(post.user, size: 50), post.user %>
-  <span class="user"><%= link_to post.user.name, post.user %></span>
-  <span class="content"><%= post.content %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(post.created_at) %> ago.
-  </span>
-</li>
-  <% end %>
-</table>
->>>>>>> af8d1b2ebda59a9a23fa4cf8d1aacff1d121f2e1
+<%= link_to 'Back', posts_path %>
