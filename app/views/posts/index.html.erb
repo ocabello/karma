@@ -1,4 +1,4 @@
-<h1>Listing Posts</h1>
+<h1>Posts</h1>
 
 <table class="table">
   <thead>
@@ -6,9 +6,10 @@
       <th>Title</th>
       <th>Description</th>
       <th>Posted By</th>
+      <th>Posted BY Name</th>
       <th>Created At</th>
       
-      <th colspan="6"></th>
+      <th colspan="7"></th>
     </tr>
   </thead>
 
@@ -18,9 +19,11 @@
         <td><%= post.title %></td>
         <td><%= post.description %></td>
         <td><%= post.postedBy %></td>
+        <td><%= post.poster_name %></td>
         <td><%= post.created_at %></td>
         <td><a href="<%= posts_path %>/<%= post.id %>">Show Post</a></td>
-        <td><a href="<%= users_path %>/<%= post.id %>">Show User</a></td>
+        <td><a href="<%= users_path %>/<%= post.postedBy %>">Show User</a></td>
+        <td><a href="#">Send Request</a></td>
       </tr>
     <% end %>
   </tbody>

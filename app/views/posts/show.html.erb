@@ -1,4 +1,4 @@
-<h1>Show Post</h1>
+<h1><%= @post.title %></h1>
 
 <p>
     <strong>Title:</strong>
@@ -10,7 +10,7 @@
 </p>
 <p>
     <strong>Posted By:</strong>
-    <%= @post.postedBy %>
+    <%= @post.current_user_name %>
 </p>
 
 </div>
