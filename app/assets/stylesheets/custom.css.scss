@@ -4,7 +4,7 @@
 /* universal */
 
 body {
-  padding-top: 60px;
+  padding-top: 40px;
 }
 
 section {
@@ -20,14 +20,14 @@ textarea {
 }
 
 .center h1 {
-  margin-bottom: 10px;
+  margin-bottom: 40px;
 }
 
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
-  color: #fff;
+  color: #FFCC33;
 }
 
 h1 {
@@ -35,6 +35,7 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  color: #FF6600;
 }
 
 h2 {
@@ -43,13 +44,14 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #fff;
+  color: #FF6600;
 ;
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+  color: #FF6600;
 }
 
 
@@ -59,7 +61,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: #FF6600;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -67,7 +69,7 @@ p {
 }
 
 #logo:hover {
-  color: #fff;
+  color: #FF6600;
   text-decoration: none;
 }
 
@@ -77,15 +79,15 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: #FFFFE0;
+  color: #FF6600;
 }
 
 footer a {
-  color: #555;
+  color: #FF6600;
 }
 
 footer a:hover {
-  color: #222;
+  color: #FF6600;
 }
 
 footer small {
