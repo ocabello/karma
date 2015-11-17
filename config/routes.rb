@@ -12,14 +12,14 @@ Rails.application.routes.draw do
   get '/users/:id' => 'users#show'
   root 'pages#home'
   get 'home' => "pages#home"
-  get 'signup' => "users#new"
+  # get 'signup' => "users#new"
   get 'posts/new' => "posts#new"
   get '/posts' => "posts#index"
   get '/requests' => "requests#index"
  # get '/requests'
   get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'logout', to: 'sessions#destroy'
 
   resources :users
   resources :posts

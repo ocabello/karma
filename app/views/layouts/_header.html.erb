@@ -3,6 +3,16 @@
     <%= link_to "KARMA", "home", id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
+        
+        <div id="user-widget">
+  <% if current_user %>
+    Welcome <strong><%= current_user.name %></strong>!
+    <%= link_to "Sign out", logout_path, id: "log_out" %>
+  <% else %>
+    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+  <% end %>
+</div>
+        
         <li><%= link_to "Posts", posts_path %></li>
         <% if logged_in? %>
           <li><a href="/users">View Users</a></li>

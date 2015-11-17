@@ -16,6 +16,7 @@ group :test, :development do
   gem 'database_cleaner'
 end
 
+gem 'omniauth-facebook'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.2.0.0'
 gem 'sass-rails', '~> 5.0'

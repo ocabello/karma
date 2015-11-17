@@ -13,15 +13,15 @@ class UsersController < ApplicationController
     @user = User.new
   end
   
-  def create
-    @user = User.new(user_params_1)
-    if @user.save
-      log_in @user
-      redirect_to '/users'
-    else
-      render 'new'
-    end
-  end
+  # def create
+  #   @user = User.new(user_params_1)
+  #   if @user.save
+  #     log_in @user
+  #     redirect_to '/users'
+  #   else
+  #     render 'new'
+  #   end
+  # end
   
   def update
     @user = User.find(params[:id])
@@ -39,9 +39,9 @@ class UsersController < ApplicationController
       params.require(:user).permit(:points)
     end
     
-    def user_params_1
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :points)
-    end
+    # def user_params_1
+    #   params.require(:user).permit(:name, :email, :password, :password_confirmation, :points)
+    # end
         
   
 end
