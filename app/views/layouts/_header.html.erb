@@ -4,17 +4,17 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         
-        <div id="user-widget">
-  <% if current_user %>
-    Welcome <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", logout_path, id: "log_out" %>
-  <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-  <% end %>
-</div>
+<!--        <div id="user-widget">-->
+<!--  <% if current_user %>-->
+<!--    Welcome <strong><%= current_user.name %></strong>!-->
+<!--  <% else %>-->
+<!--    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>-->
+<!--  <% end %>-->
+<!--</div>-->
         
         <li><%= link_to "Posts", posts_path %></li>
         <% if logged_in? %>
+          Welcome <strong><%= current_user.name %></strong>!
           <li><a href="/users">View Users</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -26,13 +26,13 @@
               <li><%= link_to "Profile", current_user %></li>
               <li class="divider"></li>
               <li>
-                <%= link_to "Log out", logout_path, method: "delete" %>
+                <%= link_to "Log out", logout_path, id: "log_out" %>
               </li>
             </ul>
           </li>
         <% else %>
-          <li><a href="/users/new">Sign Up</a></li>
-          <li><%= link_to "Log in", login_path %></li>
+          <!--<li><a href="/users/new">Sign Up</a></li>-->
+          <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
         <% end %>
       </ul>
     </nav>
