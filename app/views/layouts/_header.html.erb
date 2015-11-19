@@ -14,7 +14,7 @@
         
         <li><%= link_to "Posts", posts_path %></li>
         <% if logged_in? %>
-          Welcome <strong><%= current_user.name %></strong>!
+          <font color="white">Welcome <strong><%= current_user.name %></strong>!</font>
           <li><a href="/users">View Users</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle">
