@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     def create 
       @post = Post.new(post_params) 
       @post.postedBy = Rails.application.config.current_user.id
-      @post.poster_name = User.find(@post.postedBy).name
+      @post.posterName = User.find(@post.postedBy).name
 
       
       if @post.save 
