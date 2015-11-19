@@ -19,8 +19,8 @@
         <td><%= post.title %></td>
         <td><%= post.description %></td>
         <td><%= post.postedBy %></td>
-        <td><%= post.poster_name %></td>
-        <td><%= post.created_at %></td>
+        <td><%= post.posterName %></td>
+        <td><%= post.created_at.strftime("%B %d, %Y") %></td>
         <td><a href="<%= posts_path %>/<%= post.id %>">Show Post</a></td>
         <td><a href="<%= users_path %>/<%= post.postedBy %>">Show User</a></td>
         <td><a href="#">Send Request</a></td>
