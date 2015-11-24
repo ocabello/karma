@@ -11,16 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151119014504) do
+ActiveRecord::Schema.define(version: 20151123224710) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-    t.string   "postedBy"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
-    t.string   "posterName"
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
@@ -42,6 +40,7 @@ ActiveRecord::Schema.define(version: 20151119014504) do
     t.string   "image"
     t.string   "token"
     t.string   "expires_at"
+    t.string   "postedBy"
   end
 
 end

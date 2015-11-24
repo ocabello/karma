@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
     
     def index 
-        @posts = Post.all
-        #@post.current_user_name = User.find(@post.postedBy).name
+        @posts = Post.all.includes(:user)
 
     end
     
@@ -12,14 +11,12 @@ class PostsController < ApplicationController
     
     def show
         @post = Post.find(params[:id])
-        @post.current_user_name = User.find(@post.postedBy).name
     end
   
     def create 
-      @post = Post.new(post_params) 
-      @post.postedBy = Rails.application.config.current_user.id
-      @post.posterName = User.find(@post.postedBy).name
 
+      @current_user = User.find(Rails.application.config.current_user.id)
+      @post = current_user.posts.build(post_params)
       
       if @post.save 
         redirect_to '/posts' 
@@ -27,9 +24,11 @@ class PostsController < ApplicationController
         render 'new' 
       end 
     end
+    
     def edit
       @post = Post.find(params[:id])
     end
+    
     def update
       @post = Post.find(params[:id])
       if @post.update_attributes(post_params)
@@ -38,6 +37,13 @@ class PostsController < ApplicationController
         render 'show'  
       end
     end
+    
+    def destroy
+      Post.find(params[:id]).destroy
+      flash[:success] = "User deleted"
+      redirect_to '/posts'
+    end
+    
     private
         # Never trust parameters from the scary internet, only allow the white list through.
         def post_params
