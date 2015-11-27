@@ -4,14 +4,12 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         
-<!--        <div id="user-widget">-->
 <!--  <% if current_user %>-->
 <!--    Welcome <strong><%= current_user.name %></strong>!-->
 <!--  <% else %>-->
 <!--    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>-->
 <!--  <% end %>-->
-<!--</div>-->
-        
+
         <li><%= link_to "Posts", posts_path %></li>
         <% if logged_in? %>
           <font color="white">Welcome <strong><%= current_user.name %></strong>!</font>

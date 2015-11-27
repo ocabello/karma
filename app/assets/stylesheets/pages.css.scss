@@ -39,7 +39,7 @@ body {
 
 .jumbotron {
     height: 400px;
-    background-image: url(image-path('Give.jpg'));
+    background-image: image-url(image-path('Give.jpg'));
     background-repeat: no-repeat;
     background-position: center;
 }
