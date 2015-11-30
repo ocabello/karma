@@ -26,7 +26,7 @@
 
   <div class="field">
     <%= f.label :points %><br>
-    <%= f.text_field :points %>
+    <%= f.select :points, options_for_select([10, 20, 30], f.object.points) %>
   </div>
 
   <div class="actions">
