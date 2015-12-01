@@ -15,8 +15,11 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
-        <td><%= post.description %></td>
+        <td>
+            <%= post.title %>
+        </td>
+        <td>
+            <%= post.description %></td>
         <td>
           <a href="<%= users_path %>/<%= post.user_id %>">
             <%= post.user.name unless post.user.nil?%>
