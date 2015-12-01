@@ -15,9 +15,13 @@ section {
 textarea {
   resize: vertical;
 }
-
-.image {
+.title {
   position:relative;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+.image {
+  float:left;
 }
 .center {
   text-align: center;
@@ -37,9 +41,9 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   position: relative; 
 	//top: -143px;
-  font-size: 7em;
+  font-size: 6em;
   //letter-spacing: -2px;
-  // margin-bottom: 6em;
+  //margin-bottom: 20px;
   text-align: center;
   //color: #FF6600;
 }
