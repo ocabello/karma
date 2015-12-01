@@ -16,6 +16,9 @@ textarea {
   resize: vertical;
 }
 
+.image {
+  position:relative;
+}
 .center {
   text-align: center;
 }
@@ -34,9 +37,9 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   position: relative; 
 	//top: -143px;
-  font-size: 6em;
+  font-size: 7em;
   //letter-spacing: -2px;
-  //margin-bottom: 30px;
+  // margin-bottom: 6em;
   text-align: center;
   //color: #FF6600;
 }
