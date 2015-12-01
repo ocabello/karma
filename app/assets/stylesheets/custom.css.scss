@@ -21,24 +21,34 @@ textarea {
 }
 
 .center h1 {
-margin-bottom: 40px;
+//margin-bottom: 40px;
 }
 
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
-  color: #FF6600;
+  //color: #FF6600;
 }
 
 h1 {
   position: relative; 
-	top: -143px;
+	//top: -143px;
   font-size: 6em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
+  //letter-spacing: -2px;
+  //margin-bottom: 30px;
   text-align: center;
-  color: #FF6600;
+  //color: #FF6600;
+}
+
+.karma-title {
+  //top: -200px;
+  margin-top: -30px;
+  color: #000000;
+  letter-spacing: -2px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 60px;
+  font-weight: bold;
 }
 
 h2 {

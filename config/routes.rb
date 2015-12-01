@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
+  
+  get '/showMyPosts' => 'posts#showMyPosts'
 
   resources :users
   resources :posts

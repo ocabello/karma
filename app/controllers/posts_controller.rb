@@ -2,7 +2,11 @@ class PostsController < ApplicationController
     
     def index 
         @posts = Post.all.includes(:user)
-
+    end
+    
+    def showMyPosts
+      @current_user = User.find(Rails.application.config.current_user.id)
+      @posts = @current_user.posts.includes(:user)
     end
     
     def new 
