@@ -5,14 +5,12 @@
       <ul class="nav navbar-nav navbar-right">
         
 <!--  <% if current_user %>-->
-<!--    Welcome <strong><%= current_user.name %></strong>!-->
 <!--  <% else %>-->
 <!--    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>-->
 <!--  <% end %>-->
 
         <li><%= link_to "Posts", posts_path %></li>
         <% if logged_in? %>
-          <font color="white">Welcome <strong><%= current_user.name %></strong>!</font>
           <li><a href="/users">View Users</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle">
@@ -28,6 +26,8 @@
               </li>
             </ul>
           </li>
+          <li><font color="white">Welcome <strong><%= current_user.name %></strong>!</font></li>
+
         <% else %>
           <!--<li><a href="/users/new">Sign Up</a></li>-->
           <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
