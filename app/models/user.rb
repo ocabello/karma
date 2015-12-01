@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
       if auth['info']
          user.name = auth['info']['name'] || ""
          user.email = auth['info']['email'] || ""
+         user.image = auth['info']['image'] || ""
       end
       if auth['credentials']
         user.token = auth['credentials']['token'] || ""
