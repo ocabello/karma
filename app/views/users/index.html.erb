@@ -1,5 +1,12 @@
 <h2>All Users and Points</h2>
 
+  <div class="offset4 pull-right">
+        <%= form_tag users_path, :method => 'get', class: "navbar-search" do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Users By Name", class: 'form-control' %>
+        <%= submit_tag "Search", :name => nil, class: "btn btn-primary" %>
+        <% end %>
+  </div>
+  
 <table class="table">
   <thead>
     <tr>
