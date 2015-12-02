@@ -26,6 +26,7 @@
 <div class="updatePoints">
   <div class="container">
       
+<% if logged_in? %>
 <%= form_for(@user) do |f| %>
 
   <div class="field">
@@ -37,8 +38,14 @@
     <%= f.submit "Send Points"%>
   </div>
 <% end %>
+<% else %>
+<% end %>
 
 </div>
 </div>
-              <div><%= link_to "Edit Your Profile", edit_user_path(current_user) %></div>
+
+<% if logged_in? %>
+  <div><%= link_to "Edit Your Profile", edit_user_path(current_user) %></div>
+<% else %>
+<% end %>
 <%= link_to 'Back', users_path %>
