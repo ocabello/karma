@@ -37,12 +37,23 @@ class UsersController < ApplicationController
     
   def update
     @user = User.find(params[:id])
+    
+    if params[:user][:points]
+      @user.points += params[:user][:points].to_i
+      if @user.save!
+        redirect_to @user
+      else
+        render 'show'
+      end
+      
+    else
+    
       if @user.update_attributes(user_params)
         redirect_to @user
       else
         render 'show'  
       end
-    
+    end
   end
   
   private
