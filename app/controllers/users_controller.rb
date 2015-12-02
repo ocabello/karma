@@ -37,11 +37,19 @@ class UsersController < ApplicationController
     
   def update
     @user = User.find(params[:id])
+    @current_user = User.find(Rails.application.config.current_user.id)
     
     if params[:user][:points]
       @user.points += params[:user][:points].to_i
-      if @user.save!
-        redirect_to @user
+      @current_user.points -= params[:user][:points].to_i
+      
+      if @user.save
+        #if @current_user.save  # uncomment this when we can test with multiple users.
+          redirect_to @user
+        #else
+        #  render 'show'
+        #end
+
       else
         render 'show'
       end
