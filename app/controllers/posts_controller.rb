@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
     
     def index 
-        @posts = Post.all.includes(:user)
+        @posts = Post.all.includes(:user).paginate(page: params[:page], per_page: 3)
     end
     
     def showMyPosts
       @current_user = User.find(Rails.application.config.current_user.id)
-      @posts = @current_user.posts.includes(:user)
+      @posts = @current_user.posts.includes(:user).paginate(page: params[:page], per_page: 3)
     end
     
     def new 
