@@ -1,7 +1,11 @@
 class PostsController < ApplicationController
     
     def index 
+      if params[:search]
+        @posts = Post.includes(:user).paginate(page: params[:page], per_page: 3).search(params[:search])
+      else
         @posts = Post.all.includes(:user).paginate(page: params[:page], per_page: 3)
+      end
     end
     
     def showMyPosts
