@@ -6,10 +6,10 @@
 
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
-      
-  
 
       <%= f.submit "Save changes", class: "btn btn-primary" %>
+      <div><a href="<%= users_path %>/<%= @user.id %>">Cancel</a></div>
+
     <% end %>
 
   </div>
