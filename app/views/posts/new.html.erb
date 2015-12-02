@@ -6,20 +6,22 @@
     
 <%= render 'shared/error_messages' %>
 <%= form_for(@post) do |f| %>
-  <h1>New Post</h1>
   <div>
     <%= f.label :title %><br>
     <%= f.text_field :title, class: 'form-control'%>
     <%= f.label :description %><br>
     <%= f.text_area :description, class: 'form-control' %>
   </div>
+  <br>
  
   
   <div class="actions">
-    <%= f.submit %>
+    <div class="col-xs-3">
+    <%= f.submit "Submit post", class: "btn btn-primary" %>
+    </div>
   </div>
 <% end %>
-
+<br> <br> <br> <br>
 <div><%= link_to 'Back', posts_path %></div>
 
   </div>

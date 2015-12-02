@@ -10,9 +10,11 @@
       <%= f.text_field :title, class: 'form-control' %>
       <%= f.label :description %>
       <%= f.text_area :description, class: 'form-control' %>
-
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
-      
+      <br> 
+      <div class="col-xs-4">
+        <%= f.submit "Save changes", class: "btn btn-primary" %>
+      </div>
+       <br> <br> <br> <br>
       <div><a href="<%= posts_path %>/<%= @post.id %>">Cancel</a></div>
     <% end %>
 

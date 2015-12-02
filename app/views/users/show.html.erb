@@ -30,12 +30,16 @@
 <%= form_for(@user) do |f| %>
 
   <div class="field">
-    <%= f.label :points %><br>
-    <%= f.select :points, options_for_select([10, 20, 30], f.object.points) %>
+    <div class="col-xs-2">
+      <%= f.label :points %><br>
+      <%= f.select :points, options_for_select([10, 20, 30], f.object.points) %>
+      </div>
   </div>
-
+<br><br><br>
   <div class="actions">
-    <%= f.submit "Send Points"%>
+      <div class="col-xs-6 col-sm-3">
+        <%= f.submit "Send Points", class: "btn btn-primary" %>
+      </div>
   </div>
 <% end %>
 <% else %>
@@ -43,7 +47,7 @@
 
 </div>
 </div>
-
+<br>
 <% if logged_in? %>
   <div><%= link_to "Edit Your Profile", edit_user_path(current_user) %></div>
 <% else %>
