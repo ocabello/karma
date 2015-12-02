@@ -19,7 +19,7 @@
             <%= post.title %>
         </td>
         <td>
-            <%= post.description %></td>
+            <%= h truncate(post.description, :length => 40) %></td>
         <td>
           <a href="<%= users_path %>/<%= post.user_id %>">
             <%= post.user.name unless post.user.nil?%>
