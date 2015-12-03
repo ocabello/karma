@@ -20,7 +20,11 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.name %></td>
+        <td>
+          <a href="<%= users_path %>/<%= user.id %>">
+            <%= user.name %>
+          </a>
+        </td>
         <td><%= user.email %></td>
         <td><%= user.points %></td>
         <!--<td><%= user.created_at %></td>-->
