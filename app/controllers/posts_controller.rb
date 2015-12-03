@@ -2,15 +2,15 @@ class PostsController < ApplicationController
     
     def index 
       if params[:search]
-        @posts = Post.includes(:user).paginate(page: params[:page], per_page: 3).search(params[:search])
+        @posts = Post.includes(:user).paginate(page: params[:page], per_page: 5).search(params[:search])
       else
-        @posts = Post.all.includes(:user).paginate(page: params[:page], per_page: 3)
+        @posts = Post.all.includes(:user).paginate(page: params[:page], per_page: 5)
       end
     end
     
     def showMyPosts
       @current_user = User.find(Rails.application.config.current_user.id)
-      @posts = @current_user.posts.includes(:user).paginate(page: params[:page], per_page: 3)
+      @posts = @current_user.posts.includes(:user).paginate(page: params[:page], per_page: 5)
     end
     
     def new 
