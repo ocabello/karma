@@ -14,8 +14,8 @@
 ActiveRecord::Schema.define(version: 20151123224710) do
 
   create_table "posts", force: :cascade do |t|
-    t.string   "title"
-    t.string   "description"
+    t.string   "title",  :limit => 30
+    t.string   "description",  :limit => 100
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"

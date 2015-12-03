@@ -23,7 +23,9 @@
     <% @posts.each do |post| %>
       <tr>
         <td>
-            <%= post.title %>
+            <a href="<%= posts_path %>/<%= post.id %>">
+              <%= post.title %>
+            </a>
         </td>
         <td>
             <%= h truncate(post.description, :length => 40) %></td>
@@ -33,7 +35,6 @@
           </a>
         </td>
         <td><%= post.created_at.strftime("%B %d, %Y") %></td>
-        <td><a href="<%= posts_path %>/<%= post.id %>">Show Post</a></td>
         <!--<td><a href="<%= users_path %>/<%= post.user_id %>">Show User</a></td>-->
         <!--<td><a href="#">Send Request</a></td>-->
         <td><%= link_to "Delete", post, method: :delete, data: { confirm: "You sure?" } %></td>
