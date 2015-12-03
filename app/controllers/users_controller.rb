@@ -44,11 +44,11 @@ class UsersController < ApplicationController
       @current_user.points -= params[:user][:points].to_i
       
       if @user.save
-        if @current_user.save  # uncomment this when we can test with multiple users.
+        #if @current_user.save  # uncomment this when we can test with multiple users.
           redirect_to @user
-        else
-          render 'show'
-        end
+        #else
+        #  render 'show'
+        #end
 
       else
         render 'show'
