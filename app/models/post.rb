@@ -1,10 +1,9 @@
 class Post < ActiveRecord::Base
 
     belongs_to :user
-    validates :title, format: { with: /\A[a-zA-Z0-9 .!?"-]+\z/,
-    message: "Error: regular expressions only" }
-    validates :description, format: { with: /\A[a-zA-Z0-9 .!?"-]+\z/,
-    message: "Error: regular expressions only" }
+    validates :title, presence: true, length: {maximum: 100}
+    validates :description, presence: true, length: {maximum: 300}
+
     
     
     def self.search(search)
