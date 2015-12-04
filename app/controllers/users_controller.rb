@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   def index
     if params[:search]
-      @users = User.paginate(page: params[:page], per_page: 3).search(params[:search])
+      @users = User.paginate(page: params[:page], per_page: 5).search(params[:search])
     else
-      @users = User.all.paginate(page: params[:page], per_page: 3)
+      @users = User.all.paginate(page: params[:page], per_page: 5)
     end    
   end
 
@@ -44,11 +44,11 @@ class UsersController < ApplicationController
       @current_user.points -= params[:user][:points].to_i
       
       if @user.save
-        #if @current_user.save  # uncomment this when we can test with multiple users.
+        if @current_user.save  # uncomment this when we can test with multiple users.
           redirect_to @user
-        #else
-        #  render 'show'
-        #end
+        else
+          render 'show'
+        end
 
       else
         render 'show'

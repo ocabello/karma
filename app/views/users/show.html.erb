@@ -49,7 +49,10 @@
 </div>
 <br>
 <% if logged_in? %>
-  <div><%= link_to "Edit Your Profile", edit_user_path(current_user) %></div>
+  <% if current_user.id == @user.id %>
+    <div><%= link_to "Edit Your Profile", edit_user_path(current_user) %></div>
+  <% else %>
+  <% end %>
 <% else %>
 <% end %>
 <%= link_to 'Back', users_path %>
