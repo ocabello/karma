@@ -9,8 +9,8 @@ class PostsController < ApplicationController
     end
     
     def showMyPosts
-      @current_user = User.find(Rails.application.config.current_user.id)
-      @posts = @current_user.posts.includes(:user).paginate(page: params[:page], per_page: 5)
+      #@current_user = User.find(Rails.application.config.current_user.id)
+      @posts = current_user.posts.includes(:user).paginate(page: params[:page], per_page: 5)
     end
     
     def new 
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   
     def create 
 
-      @current_user = User.find(Rails.application.config.current_user.id)
+      #@current_user = User.find(Rails.application.config.current_user.id)
       @post = current_user.posts.build(post_params)
       
       if @post.save 

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  before_action :correct_user,   only: [:edit, :update]
+  before_action :correct_user,   only: [:edit]
     
   def index
     if params[:search]
@@ -40,7 +40,8 @@ class UsersController < ApplicationController
     
   def update
     @user = User.find(params[:id])
-    @current_user = User.find(Rails.application.config.current_user.id)
+    @current_user = User.find(current_user.id)
+    #@current_user = User.find(Rails.application.config.current_user.id)
     
     if params[:user][:points]
       @user.points += params[:user][:points].to_i
