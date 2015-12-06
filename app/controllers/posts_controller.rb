@@ -39,7 +39,7 @@ class PostsController < ApplicationController
       
       if @post.save 
         UserMailer.request_email(@current_user).deliver_now
-        redirect_to '/posts' 
+        redirect_to '/posts'
       else 
         render 'new' 
       end 
