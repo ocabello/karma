@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  before_action :correct_user,   only: [:edit, :update]
+    
   def index
     if params[:search]
       @users = User.paginate(page: params[:page], per_page: 5).search(params[:search])
@@ -70,9 +73,10 @@ class UsersController < ApplicationController
       params.require(:user).permit(:points, :email)
     end
     
-    # def user_params_1
-    #   params.require(:user).permit(:name, :email, :password, :password_confirmation, :points)
-    # end
-        
+    # Confirms the correct user.
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to root_path unless @user == current_user
+    end
   
 end
