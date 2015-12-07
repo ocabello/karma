@@ -22,6 +22,6 @@
 <br><br><br>
   <div class="actions">
       <div class="col-xs-6 col-sm-3">
-        <%= link_to "I'll Help!", send_request_mail_path, class: "btn btn-primary" %>
+        <%= link_to "I'll Help!", :controller => "posts", :action => "send_request_mail", :id => @post.id, class: "btn btn-primary" %>
       </div>
   </div>

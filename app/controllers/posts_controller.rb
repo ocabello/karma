@@ -22,13 +22,15 @@ class PostsController < ApplicationController
     end
     
     def send_request_mail
-     # @post = Post.find(params[:id])
-     # @user = User.find(@post.user_id)
-     # @current_user = User.find(Rails.application.config.current_user.id)
+      @post = Post.find(params[:id])
+      @user = User.find(@post.user_id)
+      @current_user = User.find(Rails.application.config.current_user.id)
       
      # if params[:post]
-     #   UserMailer.request_email(@post,@user).deliver_now
-     #   flash[:notice] = "Thank you for helping! An email has been sent."
+        UserMailer.request_email(@post, @user).deliver_now
+        UserMailer.confirmation_email(@post, @current_user).deliver_now
+        flash[:notice] = "Thank you for helping! An email has been sent."
+        redirect_to '/posts'
      # end
     end
   
@@ -38,7 +40,6 @@ class PostsController < ApplicationController
       @post = current_user.posts.build(post_params)
       
       if @post.save 
-        UserMailer.request_email(@current_user).deliver_now
         redirect_to '/posts'
       else 
         render 'new' 

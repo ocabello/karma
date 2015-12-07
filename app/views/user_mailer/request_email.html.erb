@@ -6,8 +6,9 @@
   
   <body>
     <h1>Hello there <%= @user.name %>,</h1>
-    <p> is willing to help you! Get in touch with them at 
-    </p>
+    <p><%= @name_current_user %> saw your post "<%= @post.title %>" and is willing to help you! 
+    Get in touch with them at <%= @email_current_user %>.</p>
     <p>Good luck and don't forget to help others!</p>
+    <p>Karma Team</p>
   </body>
 </html>
