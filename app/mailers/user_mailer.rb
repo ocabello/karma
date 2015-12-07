@@ -5,10 +5,12 @@ class UserMailer < ApplicationMailer
     def request_email(post, user)
         @user = user
         @post = post
-        @current_user = User.find(Rails.application.config.current_user.id)
-        @email_current_user = @current_user.email
-        @name_current_user = @current_user.name
-        mail(to: user.email, subject: 'Good News: Help is on its Way!')
+        @receiver = User.find(@post.user_id)
+        #@current_user = User.find(current_user.id)
+        #@current_user = User.find(Rails.application.config.current_user.id)
+        #@email_current_user = @current_user.email
+        #@name_current_user = @current_user.name
+        mail(to: @receiver.email, subject: 'Good News: Help is on its Way!')
     end
     
     def confirmation_email(post, user)

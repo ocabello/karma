@@ -9,8 +9,8 @@ class PostsController < ApplicationController
     end
     
     def showMyPosts
-      @current_user = User.find(Rails.application.config.current_user.id)
-      @posts = @current_user.posts.includes(:user).paginate(page: params[:page], per_page: 5)
+      #@current_user = User.find(Rails.application.config.current_user.id)
+      @posts = current_user.posts.includes(:user).paginate(page: params[:page], per_page: 5)
     end
     
     def new 
@@ -24,10 +24,11 @@ class PostsController < ApplicationController
     def send_request_mail
       @post = Post.find(params[:id])
       @user = User.find(@post.user_id)
-      @current_user = User.find(Rails.application.config.current_user.id)
+      @current_user = User.find(current_user.id)
+      #@current_user = User.find(Rails.application.config.current_user.id)
       
      # if params[:post]
-        UserMailer.request_email(@post, @user).deliver_now
+        UserMailer.request_email(@post, @current_user).deliver_now
         UserMailer.confirmation_email(@post, @current_user).deliver_now
         flash[:notice] = "Thank you for helping! An email has been sent."
         redirect_to '/posts'
@@ -36,7 +37,7 @@ class PostsController < ApplicationController
   
     def create 
 
-      @current_user = User.find(Rails.application.config.current_user.id)
+      #@current_user = User.find(Rails.application.config.current_user.id)
       @post = current_user.posts.build(post_params)
       
       if @post.save 
