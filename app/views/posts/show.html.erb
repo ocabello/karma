@@ -17,3 +17,11 @@
     <div><%= link_to "Edit Your Post", edit_post_path(@post) %></div> <br>
     <div><%= link_to 'Back', posts_path %></div>
 </p>
+
+
+<br><br><br>
+  <div class="actions">
+      <div class="col-xs-6 col-sm-3">
+        <%= link_to "I'll Help!", :controller => "posts", :action => "send_request_mail", :id => @post.id, class: "btn btn-primary" %>
+      </div>
+  </div>

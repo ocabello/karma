@@ -59,3 +59,6 @@ group :development do
   gem 'spring'
 end
 
+  # secures sensitive information in the app
+  gem 'figaro'
+

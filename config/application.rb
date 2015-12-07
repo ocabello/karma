@@ -22,5 +22,24 @@ module Karma
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.perform_deliveries = true
+
+    config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+    
+    #mailer SMTP server configuration
+    config.action_mailer.delivery_method = :smtp
+
+    #STMP settings
+    config.action_mailer.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                  587,
+      domain:               'gmail.com',
+      user_name:            'notificationskarma@gmail.com',
+      password:             'teamkarma2015',
+      authentication:       'plain',
+      enable_starttls_auto: true  
+    }
   end
 end
