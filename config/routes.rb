@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   #get '/requests' => "requests#index"
  # get '/requests'
  
+  get :send_request_mail, to: 'posts#send_request_mail', as: :send_request_mail
+ 
   get    'login'   => 'sessions#new'
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'

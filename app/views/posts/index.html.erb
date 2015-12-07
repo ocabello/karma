@@ -7,13 +7,18 @@
         <% end %>
   </div>
   
+
+  <p id="error_explanation">
+  <%= flash[:notice] unless flash[:notice].blank? %>
+  </p>
+  
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Title</th>
       <th>Description</th>
       <th>Posted By</th>
-      <th>Created At</th>
+      <th>Created On</th>
       
       <th colspan="5"></th>
     </tr>
