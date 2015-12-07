@@ -30,7 +30,7 @@ class PostsController < ApplicationController
      # if params[:post]
         UserMailer.request_email(@post, @current_user).deliver_now
         UserMailer.confirmation_email(@post, @current_user).deliver_now
-        flash[:notice] = "Thank you for helping! An email has been sent."
+        flash[:notice] = "Thank you for helping! An email has been sent to #{@user.name}."
         redirect_to '/posts'
      # end
     end
