@@ -1,56 +1,65 @@
 <div class="title">
-  <div class="image">
-  <%= image_tag @user.image %>
-  </div>
+
   <div class="name">
-  <h1><%= @user.name%></h1>
+    <h1><%= @user.name%></h1>
   </div>
-</div>
-<p>
-    <strong>Email:</strong>
-    <%= @user.email %>
-</p>
-<p>
-    <strong>Karma Points:</strong>
-    <%= @user.points %>
-</p>
-<!--
-<p>
-    <strong>Id:</strong>
-    <%= @user.id %>
-</p>
--->
-
-<div class="updatePoints">
-  <div class="container">
-      
-<% if logged_in? %>
-<%= form_for(@user) do |f| %>
-
-  <div class="field">
-    <div class="col-xs-2">
-      <%= f.label :points %><br>
-      <%= f.select :points, options_for_select([10, 20, 30], 10) %>
-      </div>
+  
+  <div class="center">
+    <%= image_tag @user.image %>
   </div>
-<br><br><br>
-  <div class="actions">
-      <div class="col-xs-6 col-sm-3">
-        <%= f.submit "Send Points", class: "btn btn-primary" %>
-      </div>
-  </div>
-<% end %>
-<% else %>
-<% end %>
+  
+</div>
 
-</div>
-</div>
-<br>
-<% if logged_in? %>
-  <% if current_user.id == @user.id %>
-    <div><%= link_to "Edit Your Profile", edit_user_path(current_user) %></div>
+<div class="col-lg-offset-4">
+  <p>
+      <big><strong>Email:</strong></big>
+      <%= @user.email %>
+  </p>
+  <p>
+      <big><strong>Karma Points:</strong></big>
+      <%= @user.points %>
+  </p>
+  <!--
+  <p>
+      <strong>Id:</strong>
+      <%= @user.id %>
+  </p>
+  -->
+  
+  <div class="updatePoints">
+    <div class="container">
+        
+  <% if logged_in? %>
+  <%= form_for(@user) do |f| %>
+  
+    <div class="field">
+      <div class="col-xs-2">
+        <%= f.label :points %><br>
+        <%= f.select :points, options_for_select([10, 20, 30], 10) %>
+        </div>
+    </div>
+  <br><br><br>
+    <div class="actions">
+        <div class="col-xs-6 col-sm-3">
+          <%= f.submit "Send Points", class: "btn btn-primary" %>
+        </div>
+    </div>
+  <% end %>
   <% else %>
   <% end %>
-<% else %>
-<% end %>
-<%= link_to 'Back', :back %>
+  
+  </div>
+  </div>
+  <br>
+  <p>
+  <% if logged_in? %>
+    <% if current_user.id == @user.id %>
+      <div><%= link_to "Edit Your Profile", edit_user_path(current_user), class: "btn btn-primary" %></div>
+    <% else %>
+    <% end %>
+  <% else %>
+  <% end %>
+  <br>
+  <div><%= link_to 'Back', :back, class: "btn btn-primary" %></div>
+  </p>
+</div>

@@ -15,19 +15,22 @@ section {
 textarea {
   resize: vertical;
 }
+
 .title {
-  position:relative;
-  margin-top:20px;
-  margin-bottom:190px;
+  //position:relative;
+  //margin-top:20px;
+  margin-bottom:20px;
+  //margin-right: auto;
+  //margin-left: auto;
 }
 .image {
   float:left;
 }
 .name {
-  float:left;
-  position: relative;
-  margin-top: 3em;
-  margin-left: 1.5em;
+  //float:left;
+  //position: relative;
+  //margin-top: 3em;
+  //margin-left: 1.5em;
 }
 .center {
   text-align: center;
