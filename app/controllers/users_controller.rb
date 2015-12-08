@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   
   before_action :correct_user,   only: [:edit]
-    
+  helper_method :sort_column
+
   def index
     if params[:search]
       @users = User.order(params[:sort]).paginate(page: params[:page], per_page: 5).search(params[:search])
@@ -79,5 +80,8 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       redirect_to root_path unless @user == current_user
     end
-  
+    
+    def sort_column
+      (params[:sort]) ? params[:sort] : nil   
+    end 
 end
