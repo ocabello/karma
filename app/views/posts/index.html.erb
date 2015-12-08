@@ -1,4 +1,6 @@
-<h2>All Posts</h2>
+<div class="page-wrapper">
+
+ <h2>All Posts</h2>
 
   <div class="offset4 pull-right">
         <%= form_tag posts_path, :method => 'get', class: "navbar-search" do %>
@@ -57,3 +59,5 @@
   <%= link_to 'Create New Post!', new_post_path, class: "btn btn-primary" %>
 <% else %>
 <% end %>
+
+</div>
