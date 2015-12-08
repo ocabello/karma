@@ -15,11 +15,10 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
+      <th><%= link_to "Title", :sort => "title" %></th>
+      <th><%= link_to "Description", :sort => "description" %></th>
       <th>Posted By</th>
-      <th>Created On</th>
-      
+      <th><%= link_to "Created On", :sort => "created_at" %></th>
       <th colspan="5"></th>
     </tr>
   </thead>
