@@ -28,7 +28,12 @@
 body {
 }
 
-.jumbotron h1 {
+.jumbotron{
+    height: 500px;
+
+}
+
+.img-container h1 {
     padding: 10px;
     position: relative;
     text-align: center;
@@ -36,12 +41,11 @@ body {
     font-size: 80px;
     font-weight: bold;
     color: #000000;
-    
+    margin-top: 180px;
 }
 
 
-.jumbotron {
-    height: 500px;
+.img-container {
     width: 100%;
     background-image: url("https://pixabay.com/static/uploads/photo/2015/03/26/10/32/houses-691520_960_720.jpg");
     background-repeat: no-repeat;
@@ -50,11 +54,12 @@ body {
     
 }
 
-.jumbotron p{
+.img-container p{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     color: #FFFFFF;
     text-align: center;
+    margin-top: 20px;
 }
 
 .About-Karma h3{
@@ -66,6 +71,8 @@ body {
     border: none;
     padding: 30px;
 }
+
+
 
 .About-Karma{
     font-family: Arial, Helvetica, sans-serif;

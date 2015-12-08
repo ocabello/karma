@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 20151123224710) do
     t.string   "image"
     t.string   "token"
     t.string   "expires_at"
-    t.string   "postedBy"
   end
 
 end
