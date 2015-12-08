@@ -32,7 +32,7 @@
         
         <!--<td><a href="<%= users_path %>/<%= post.user_id %>">Show User</a></td>-->
         <!--<td><a href="#">Send Request</a></td>-->
-        <td><%= link_to "Delete", post, method: :delete, data: { confirm: "You sure?" } %></td>
+        <td><%= link_to "Delete", post, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-primary" %></td>
 
       </tr>
     <% end %>
