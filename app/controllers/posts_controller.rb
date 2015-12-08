@@ -79,4 +79,8 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
         redirect_to root_path unless @post.user_id == current_user.id
       end
+      
+      def sort_column
+        params[:sort]
+      end
 end
