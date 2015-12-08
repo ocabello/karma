@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
-    
+  
+    before_action :correct_user,   only: [:edit]
+
     def index 
       if params[:search]
         @posts = Post.includes(:user).paginate(page: params[:page], per_page: 5).search(params[:search])
@@ -72,4 +74,9 @@ class PostsController < ApplicationController
             params.require(:post).permit(:title, :description, :usermyid)
         end
 
+      # Confirms the correct user.
+      def correct_user
+        @post = Post.find(params[:id])
+        redirect_to root_path unless @post.user_id == current_user.id
+      end
 end

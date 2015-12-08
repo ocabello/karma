@@ -15,7 +15,11 @@
     </p>
     
     <p>
-        <div><%= link_to "Edit Your Post", edit_post_path(@post), class: "btn btn-primary" %></div> <br>
+        <% if current_user.id == @post.user_id %>
+            <div><%= link_to "Edit Your Post", edit_post_path(@post), class: "btn btn-primary" %></div> 
+        <% else %>
+        <% end %>
+        <br>
         <div><%= link_to 'Back', posts_path, class: "btn btn-primary" %></div>
     </p>
     
