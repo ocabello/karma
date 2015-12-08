@@ -85,8 +85,11 @@ body {
   background-position: right center;
 }
 
-.pretty th .asc {
+.asc {
   background-image: url("http://s30.postimg.org/75rvpf9x9/up_arrow.gif");
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
 }
 
 .pretty th .desc {

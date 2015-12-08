@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
   
     before_action :correct_user,   only: [:edit]
-
+    helper_method :sort_column
+    
     def index 
       if params[:search]
         @posts = Post.includes(:user).order(params[:sort]).paginate(page: params[:page], per_page: 5).search(params[:search])
@@ -81,6 +82,7 @@ class PostsController < ApplicationController
       end
       
       def sort_column
-        params[:sort]
+        #Post.column_names.include?(params[:sort]) ? params[:sort] : nil   
+        (params[:sort]) ? params[:sort] : nil   
       end
 end
