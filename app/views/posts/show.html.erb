@@ -1,27 +1,29 @@
 <h1><%= @post.title %></h1>
 
-<p>
-    <strong>Title:</strong>
-    <%= @post.title %>
-</p>
-<p>
-    <strong>Description:</strong>
-    <%= @post.description %>
-</p>
-<p>
-    <strong>Posted By:</strong>
-    <%= @post.user.name %>
-</p>
-
-<p>
-    <div><%= link_to "Edit Your Post", edit_post_path(@post) %></div> <br>
-    <div><%= link_to 'Back', posts_path %></div>
-</p>
-
-
-<br><br><br>
-  <div class="actions">
-      <div class="col-xs-6 col-sm-3">
-        <%= link_to "I'll Help!", :controller => "posts", :action => "send_request_mail", :id => @post.id, class: "btn btn-primary" %>
+<div class="col-lg-offset-4">
+    <p>
+        <big><strong>Title:</strong></big>
+        <%= @post.title %>
+    </p>
+    <p>
+        <big><strong>Description:</strong></big>
+        <%= @post.description %>
+    </p>
+    <p>
+        <big><strong>Posted By:</strong></big>
+        <%= @post.user.name %>
+    </p>
+    
+    <p>
+        <div><%= link_to "Edit Your Post", edit_post_path(@post), class: "btn btn-primary" %></div> <br>
+        <div><%= link_to 'Back', posts_path, class: "btn btn-primary" %></div>
+    </p>
+    
+    
+    <br><br><br>
+      <div class="actions">
+          <div>
+            <%= link_to "I'll Help!", {:controller => "posts", :action => "send_request_mail", :id => @post.id}, class: "btn btn-primary" %>
+          </div>
       </div>
-  </div>
+</div>
