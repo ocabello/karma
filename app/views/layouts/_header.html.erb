@@ -3,15 +3,9 @@
     <%= link_to "KARMA", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        
-<!--  <% if current_user %>-->
-<!--  <% else %>-->
-<!--    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>-->
-<!--  <% end %>-->
-
         <li><%= link_to "Posts", posts_path %></li>
         <% if logged_in? %>
-          <li><a href="/users">View Users</a></li>
+          <li><a href="/users">Users</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle">
               Account <b class="caret"></b>
@@ -26,11 +20,10 @@
               </li>
             </ul>
           </li>
-          <li><font color="white">Welcome <strong><%= current_user.name %></strong>!</font></li>
+          <li class="welcome"><font color="white">Welcome <strong><%= current_user.name %></strong>!</font></li>
 
         <% else %>
-          <!--<li><a href="/users/new">Sign Up</a></li>-->
-          <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+          <%= link_to "Facebook sign in", "/auth/facebook", id: "sign_in" %>
         <% end %>
       </ul>
     </nav>

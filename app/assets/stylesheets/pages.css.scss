@@ -8,12 +8,21 @@
     display: inline;
 }
 
+#sign_in {
+  margin-top: 5px;
+  display: inline-block;
+}
+
+.welcome {
+    margin-top: 15px;
+}
+
 .nav a{
     color: #FF6600;
     font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
-    padding: 14px 10px;
+    padding: 5px 10px;
     text-decoration: none;
 }
 
@@ -32,7 +41,10 @@ body {
     height: 500px;
 
 }
-
+.containerLarge {
+    padding-left: 0px; 
+    padding-right: 0px; 
+}
 .img-container h1 {
     padding: 10px;
     position: relative;
