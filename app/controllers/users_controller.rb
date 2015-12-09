@@ -50,7 +50,7 @@ class UsersController < ApplicationController
       
       if @user.save
         if @current_user.save  # uncomment this when we can test with multiple users.
-          redirect_to @user
+          redirect_to users_path
         else
           render 'show'
         end
