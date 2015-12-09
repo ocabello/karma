@@ -70,7 +70,10 @@
   <% else %>
   <% end %>
   <br>
-  <div><%= link_to 'Back', :back, class: "btn btn-primary" %></div>
+  <% if current_user.id != @user.id %>
+    <div><%= link_to 'Back', users_path, class: "btn btn-primary" %></div>
+  <% else %>
+  <% end %>   
   </p>
 </div>
 
