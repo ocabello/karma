@@ -17,8 +17,11 @@
     </p>
     
     <p>
-        <% if current_user.id == @post.user_id %>
-            <div><%= link_to "Edit Your Post", edit_post_path(@post), class: "btn btn-primary" %></div> 
+        <% if logged_in? %>
+            <% if current_user.id == @post.user_id %>
+                <div><%= link_to "Edit Your Post", edit_post_path(@post), class: "btn btn-primary" %></div> 
+            <% else %>
+            <% end %>
         <% else %>
         <% end %>
         <br>
@@ -29,8 +32,11 @@
     <br><br><br>
       <div class="actions">
           <div>
-            <% if current_user.id != @post.user_id %>
-                <%= link_to "I'll Help!", {:controller => "posts", :action => "send_request_mail", :id => @post.id}, class: "btn btn-primary" %>
+            <% if logged_in? %>
+                <% if current_user.id != @post.user_id %>
+                    <%= link_to "I'll Help!", {:controller => "posts", :action => "send_request_mail", :id => @post.id}, class: "btn btn-primary" %>
+                <% else %>
+                <% end %>
             <% else %>
             <% end %>
           </div>
