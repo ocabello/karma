@@ -29,7 +29,10 @@
     <br><br><br>
       <div class="actions">
           <div>
-            <%= link_to "I'll Help!", {:controller => "posts", :action => "send_request_mail", :id => @post.id}, class: "btn btn-primary" %>
+            <% if current_user.id != @post.user_id %>
+                <%= link_to "I'll Help!", {:controller => "posts", :action => "send_request_mail", :id => @post.id}, class: "btn btn-primary" %>
+            <% else %>
+            <% end %>
           </div>
       </div>
 </div>
